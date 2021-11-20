@@ -6,7 +6,7 @@ COPY --from=mcr.microsoft.com/dotnet/core/sdk:3.1 /usr/share/dotnet /usr/share/d
 COPY . /src/dotnet-function-app
 RUN cd /src/dotnet-function-app && \
     mkdir -p /home/site/wwwroot && \
-    dotnet publish *.csproj --output /home/site/wwwroot
+    dotnet publish *.csproj --output /home/site/wwwroot --configuration Release
 
 # To enable ssh & remote debugging on app service change the base image to the one below
 # FROM mcr.microsoft.com/azure-functions/dotnet-isolated:3.0-dotnet-isolated5.0-appservice
