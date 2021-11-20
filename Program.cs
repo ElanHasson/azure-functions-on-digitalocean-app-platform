@@ -9,7 +9,7 @@ namespace azure_functions_on_digitalocean_app_platform
     {
         public static async Task Main()
         {
-            var host = new HostBuilder()
+            await new HostBuilder()
                 .ConfigureFunctionsWorkerDefaults()
                 .RunConsoleAsync();
 
